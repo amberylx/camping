@@ -1,6 +1,9 @@
-from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+
+from inventory import views
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('inventory/', include('inventory.urls')),
+    path(r'inventory/', views.inventory_list, name='inventory_list'),
 ]

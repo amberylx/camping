@@ -1,8 +1,8 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.urls import path
 
 from inventory import views
 
 
-urlpatterns = patterns(
-    url(r'', views.index, name='index'),
-)
+urlpatterns = [
+    path(r'', views.inventory_list, name='inventory_list'),
+]

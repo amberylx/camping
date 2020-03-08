@@ -1,6 +1,9 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+def inventory_list(request):
+    from django.shortcuts import render
+    from inventory import models
 
+    camp_items = models.CampItem.objects.all()
 
-def index(request):
-    return HttpResponse("Hello World")
+    return render(request, 'inventory_list.html', {
+        'camp_items': camp_items
+    }, content_type='text/html')
