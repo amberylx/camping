@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from users import models
+
+
+def login(request):
+    return render(request, 'login.html', {
+    }, content_type='text/html')
