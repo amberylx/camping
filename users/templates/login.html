@@ -3,11 +3,18 @@
   </head>
   <body>
     <h1>Login</h1>
-    <form>
+    {{ form.errors }}
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
       <div>
+        {{ form.username.label_tag }}
+        {{ form.username }}
       </div>
       <div>
+        {{ form.password.label_tag }}
+        {{ form.password }}
       </div>
+      <input type="submit" value="Login" />
     </form>
   </body>
 </html>
