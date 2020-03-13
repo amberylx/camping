@@ -9,3 +9,8 @@ class CampingLoginView(auth_views.LoginView):
 
     def get_success_url(self):
         return reverse('inventory_list')
+
+
+class CampingLogoutView(auth_views.LogoutView):
+    def get_next_page(self):
+        return reverse('login')
